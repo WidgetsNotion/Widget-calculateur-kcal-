@@ -1,165 +1,156 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Aligner en haut pour ne pas être centré verticalement */
     min-height: 100vh;
-    background-color: #f0f5eb;
+    background-color: #e8f5e9; /* Vert clair pour le fond de la page */
     margin: 0;
-    padding: 20px;
+    padding: 20px; /* Ajout d'un peu de padding autour du widget */
     box-sizing: border-box;
-    color: #333;
+    font-size: 1.05em; /* Augmenter la taille de base de la police */
 }
 
 .calculator-container {
-    background-color: #ffffff;
+    background-color: #fff;
+    border-radius: 12px; /* Coins arrondis */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Ombre douce */
     padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-    max-width: 450px;
     width: 100%;
+    max-width: 500px; /* Largeur maximale du widget augmentée */
     text-align: center;
-    border: 1px solid #e0e5da;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    box-sizing: border-box;
 }
 
-/* Style pour le conteneur de l'icône et du titre */
-.header-content {
+.header {
+    margin-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    margin-bottom: 28px;
+}
+
+.logo {
+    width: 60px; /* Taille de l'icône */
+    height: 60px;
+    margin-bottom: 10px;
 }
 
 h2 {
-    color: #336666;
-    margin: 0;
-    font-size: 2em;
-    font-weight: 600;
-    margin-top: 10px;
-    margin-left: 0;
+    color: #326565; /* Texte du titre couleur bouton */
+    font-size: 1.6em; /* Texte du titre plus gros */
+    margin-top: 0;
+    margin-bottom: 10px;
 }
 
-/* Style pour l'icône Flaticon */
-.calculator-icon {
-    width: 80px;
-    height: auto;
+.input-section {
+    margin-bottom: 20px;
 }
 
 .input-group {
-    margin-bottom: 20px;
-    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 15px;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #336666;
-    font-weight: 500;
+.input-group label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #326565; /* Labels couleur bouton */
+    font-size: 1em; /* Taille de la police des labels */
 }
 
-input[type="number"],
-select {
-    width: calc(100% - 22px);
-    padding: 12px;
-    border: 1px solid #c8d9be;
+.input-group input[type="number"],
+.input-group select {
+    width: 100%;
+    padding: 12px 14px; /* Padding légèrement augmenté */
+    border: 1px solid #ddd;
     border-radius: 8px;
-    font-size: 1.05em;
-    box-sizing: border-box;
-    color: #333;
-    background-color: #fcfcfc;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    font-size: 1.05em; /* Taille de la police des champs de saisie */
+    box-sizing: border-box; /* Inclure padding et border dans la largeur */
+    background-color: #f8f8f8; /* Légèrement grisé */
+    color: #333; /* Couleur du texte saisi, peut rester sombre pour la lisibilité */
 }
 
-input[type="number"]:focus,
-select:focus {
-    border-color: #99cc66;
+.input-group input[type="number"]:focus,
+.input-group select:focus {
+    border-color: #326565; /* Couleur au focus : votre vert foncé */
     outline: none;
-    box-shadow: 0 0 0 3px rgba(153, 204, 102, 0.25);
+    box-shadow: 0 0 0 3px rgba(50, 101, 101, 0.2); /* Ombre au focus */
 }
 
 button {
-    background-color: #336666;
+    background-color: #326565; /* Couleur du bouton : votre vert foncé */
     color: white;
-    padding: 15px 30px;
+    padding: 14px 22px; /* Padding du bouton augmenté */
     border: none;
     border-radius: 8px;
-    font-size: 1.15em;
+    font-size: 1.15em; /* Taille de la police du bouton augmentée */
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-    margin-top: 25px;
+    transition: background-color 0.3s ease;
     width: 100%;
-    font-weight: 600;
-    letter-spacing: 0.5px;
+    margin-top: 10px;
 }
 
 button:hover {
-    background-color: #2b5555;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    background-color: #274f4f; /* Couleur du bouton au survol (légèrement plus foncé) */
 }
 
-.result {
-    margin-top: 35px;
-    padding: 20px;
-    background-color: #e6f2d9;
+.results-section {
+    background-color: #e3f0e3; /* Un vert très très clair (dérivé de votre vert clair #97ca65) */
+    border: 1px solid #97ca65; /* Bordure des résultats : votre vert clair */
     border-radius: 10px;
-    border: 1px solid #99cc66;
-    text-align: center;
+    padding: 25px; /* Padding des résultats augmenté */
+    margin-top: 25px;
+    text-align: left;
 }
 
-.result p {
-    margin: 10px 0;
-    color: #333;
-    font-size: 1.2em;
+.results-section p {
+    margin-bottom: 10px; /* Marge augmentée */
+    font-size: 1.05em; /* Taille de la police des paragraphes de résultats */
+    color: #326565; /* Paragraphes de résultats couleur bouton */
 }
 
-.result span {
+.result-value {
     font-weight: bold;
-    color: #336666;
+    color: #326565; /* Couleur des valeurs des résultats : votre vert foncé (déjà correct) */
+    font-size: 1.1em; /* Taille de la police des valeurs de résultats */
 }
 
-/* Style pour la ligne de séparation dans les résultats */
-.separator {
-    border: none;
-    border-top: 1px dashed #99cc66; /* Ligne pointillée verte */
-    margin: 20px auto; /* Espacement au-dessus et en dessous */
-    width: 80%; /* Largeur de la ligne */
+.macro-distribution {
+    margin-top: 25px; /* Marge augmentée */
+    padding-top: 20px; /* Padding augmenté */
+    border-top: 1px dashed #97ca65; /* Ligne en pointillé : votre vert clair */
 }
 
-/* Style pour l'information sur la méthode de calcul (DANS le bloc résultat) */
-.method-info {
-    margin-top: 15px;
-    padding: 10px 0;
-    background-color: transparent;
-    border-top: 1px dashed #b7d69b;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
-    border-radius: 0;
-    font-size: 0.85em;
-    color: #4b8b60;
+.macro-distribution h3 {
+    font-size: 1.3em; /* Taille de la police du titre des macros */
+    color: #326565; /* Titre des macros couleur bouton */
+    margin-top: 0;
+    margin-bottom: 12px; /* Marge augmentée */
+}
+
+.macro-distribution p {
+    margin-bottom: 8px; /* Marge augmentée */
+    font-size: 1.05em; /* Taille de la police des macros */
+    color: #326565; /* Paragraphes des macros couleur bouton */
+}
+
+.info-text {
+    font-size: 0.95em; /* Taille de la police du texte d'info */
+    color: #326565; /* Texte d'info couleur bouton */
+    margin-top: 20px; /* Marge augmentée */
     text-align: center;
 }
 
-.method-info p {
-    margin: 0;
-}
-
-.method-info p strong {
-    color: #336666;
-}
-
-.warning {
-    margin-top: 30px;
-    padding: 12px;
-    background-color: #fff3cd;
-    border: 1px solid #ffeeba;
+.disclaimer-box {
+    /* Conserve les couleurs d'avertissement classiques comme sur les captures d'écran */
+    background-color: #fff3e0;
+    border: 1px solid #ffe0b2;
     border-radius: 8px;
-    font-size: 0.9em;
-    color: #8d7020;
+    padding: 18px; /* Padding augmenté */
+    margin-top: 30px; /* Marge augmentée */
+    font-size: 0.95em; /* Taille de la police du disclaimer */
+    color: #e65100; /* Le disclaimer reste orange pour l'avertissement */
     text-align: center;
 }
